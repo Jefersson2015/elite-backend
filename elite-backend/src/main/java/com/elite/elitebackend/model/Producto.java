@@ -14,6 +14,12 @@ public class Producto {
     private Double precio;
     private Integer stock;
 
+    @Column(name = "imagen")
+    private String imagen;
+
+    @Column(name = "categoria")
+    private String categoria;
+
     public Integer getId() {
         return id;
     }
@@ -52,5 +58,21 @@ public class Producto {
 
     public void setStock(Integer stock) {
         this.stock = stock;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

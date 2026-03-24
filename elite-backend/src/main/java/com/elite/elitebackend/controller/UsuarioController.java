@@ -35,6 +35,16 @@ public class UsuarioController {
         return usuarioRepository.save(usuario);
     }
 
+    @PostMapping("/login")
+    public Usuario login(@RequestBody Usuario usuario) {
+        // Buscar usuario que coincida con username y password
+        return usuarioRepository.findAll().stream()
+                .filter(u -> u.getUsername().equals(usuario.getUsername())
+                        && u.getPassword().equals(usuario.getPassword()))
+                .findFirst()
+                .orElse(null);
+    }
+
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id) {
         usuarioRepository.deleteById(id);
