@@ -19,6 +19,15 @@ public class PedidoDetalle {
 
     private Integer cantidad;
     private Double subtotal;
+    private Double precioUnitario;
+
+    public Double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(Double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
 
     public Integer getId() {
         return id;
